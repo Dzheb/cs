@@ -9,7 +9,17 @@
         index++;
     }
 }
-
+// void FillString(string[] something)
+// {
+//     int length = something.Length;
+//     int index = 0;
+//     while (index < length)
+//     {
+//         something = "new Random().Next(1, 10)";
+//         //index = index + 1;
+//         index++;
+//     }
+// }
 void PrintArray(int[] col)
 {
     int count = col.Length;
@@ -20,6 +30,17 @@ void PrintArray(int[] col)
         position++;
     }
 }
+
+// void PrintSomething(string[] some)
+// {
+//     int count = col.Length;
+//     int position = 0;
+//     while (position < count)
+//     {
+//         Console.WriteLine(col[position]);
+//         position++;
+//     }
+// }
 
 int IndexOf(int[] collection, int find)
 {
@@ -49,4 +70,8 @@ Console.WriteLine();
 
 int pos = IndexOf(array, 444);
 Console.WriteLine(pos);
+
+// FillString
+// PrintSomething(something);
+// Console.WriteLine();
 
