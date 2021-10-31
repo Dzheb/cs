@@ -13,216 +13,217 @@ Console.WriteLine("Задача1");
 // 1. функция получения случайного числа
 int GetRandom(int minValue, int maxValue)
 {
-  
-  return new Random().Next(minValue,maxValue);
+
+  return new Random().Next(minValue, maxValue);
 }
 // 2. функция заполнения массива
 void FillArray(int[] collection, int minel, int maxel)
 {
-    int length = collection.Length;
-    int index = 0;
-     while (index < length)
-     {
-         collection[index] = GetRandom(minel,maxel);
-         //Console.WriteLine(minel);
-         // Console.WriteLine(maxel);
-         index++; 
-     }
+  int length = collection.Length;
+  int index = 0;
+  while (index < length)
+  {
+    collection[index] = GetRandom(minel, maxel);
+    //Console.WriteLine(minel);
+    // Console.WriteLine(maxel);
+    index++;
+  }
 }
 
 // 3. функция печати массива
 void PrintArray(int[] col)
 {
-    int count = col.Length;
-    int position = 0;
-    while (position < count)
-    {
-        Console.Write(col[position] +"  ");
-        position++;
-    }
+  int count = col.Length;
+  int position = 0;
+  while (position < count)
+  {
+    Console.Write(col[position] + "  ");
+    position++;
+  }
 }
 // 4. функция исключения элементов нарушения возрастания
 
-int[]  ExtractWrong(int[] collection)
+int[] ExtractWrong(int[] collection)
 {
-    int length = collection.Length;
-    int currentElement = collection[0];
-    int index = 1;
-    int indexc = 1;
-    int[] coltrans = new int[10];
-    coltrans[0] = currentElement;
-     while (index < length-1)
-     {
-       if(collection[index] > currentElement)
-        {
-          currentElement = collection[index];
-          coltrans[indexc] = currentElement;
-          indexc++; 
-        }
-         
-         index++; 
-     }
-     return coltrans;
+  int length = collection.Length;
+  int currentElement = collection[0];
+  int index = 1;
+  int indexc = 1;
+  int[] coltrans = new int[10];
+  coltrans[0] = currentElement;
+  while (index < length - 1)
+  {
+    if (collection[index] > currentElement)
+    {
+      currentElement = collection[index];
+      coltrans[indexc] = currentElement;
+      indexc++;
+    }
+
+    index++;
+  }
+  return coltrans;
 }
 
 // 5. функция исключения элементов
 //больше среднего арифметического элементов A
 
-int[]  ExtractBig(int[] collection, int mean)
+int[] ExtractBig(int[] collection, int mean)
 {
-    int length = collection.Length;
-    int currentElement = collection[0];
-    int index = 0;
-    int indexc = 0;
-    int[] coltrans = new int[10];
-    coltrans[0] = currentElement;
-     while (index < length)
-     {
-       if(collection[index] <= mean)
-        {
-          coltrans[indexc] = collection[index];
-          indexc++; 
-        }
-         
-         index++; 
-     }
-     return coltrans;
+  int length = collection.Length;
+  int currentElement = collection[0];
+  int index = 0;
+  int indexc = 0;
+  int[] coltrans = new int[10];
+  coltrans[0] = currentElement;
+  while (index < length)
+  {
+    if (collection[index] <= mean)
+    {
+      coltrans[indexc] = collection[index];
+      indexc++;
+    }
+
+    index++;
+  }
+  return coltrans;
 }
 
 // 6. функция нахождения среднего арифметического эл-ов массива
-int  MeanArray(int[] collection)
+int MeanArray(int[] collection)
 {
-    int length = collection.Length;
-    int index = 0;
-    int sum = 0;
+  int length = collection.Length;
+  int index = 0;
+  int sum = 0;
 
-    while (index < length)
-      {
-          sum = sum + collection[index];
-          index++;
-      }
+  while (index < length)
+  {
+    sum = sum + collection[index];
+    index++;
+  }
 
-      int mean = sum/length;
-      return mean;
+  int mean = sum / length;
+  return mean;
 
-    }
+}
 
 // 7. функция исключения чётных элементов массива 
 
-int[]  ExtractEven(int[] collection)
+int[] ExtractEven(int[] collection)
 {
-    int length = collection.Length;
-    int currentElement = collection[0];
-    int index = 0;
-    int indexc = 0;
-    int[] coltrans = new int[10];
-    coltrans[0] = currentElement;
-     while (index < length)
-     {
+  int length = collection.Length;
+  int currentElement = collection[0];
+  int index = 0;
+  int indexc = 0;
+  int[] coltrans = new int[10];
+  coltrans[0] = currentElement;
+  while (index < length)
+  {
 
-       if(collection[index] % 2 != 0)
-        {
-          coltrans[indexc] = collection[index];
-          indexc++; 
-        }
-         
-         index++; 
-     }
-     return coltrans;
+    if (collection[index] % 2 != 0)
+    {
+      coltrans[indexc] = collection[index];
+      indexc++;
+    }
+
+    index++;
+  }
+  return coltrans;
 }
 // 8. функция исключения нулевых элементов массива 
 
-int[]  TruncZero(int[] collection)
+int[] TruncZero(int[] collection)
 {
-    int length = collection.Length;
-    int index = 0;
-    while (index < length)
-     {
-       if(collection[index] == 0)
-        {
-          break; 
-        }
-        index++; 
-     }
-    int [] col = new int[index];
-    length = col.Length;
-    index = 0;
-     while (index < length)
-     {
-       col[index] = collection[index];
-        index++; 
-      }
-       return col;
+  int length = collection.Length;
+  int index = 0;
+  while (index < length)
+  {
+    if (collection[index] == 0)
+    {
+      break;
+    }
+    index++;
+  }
+  int[] col = new int[index];
+  length = col.Length;
+  index = 0;
+  while (index < length)
+  {
+    col[index] = collection[index];
+    index++;
+  }
+  return col;
 }
 // 9. функция исключения элементов массива > 8
 
-int[]  ExtractMore(int[] collection, int lim)
+int[] ExtractMore(int[] collection, int lim)
 {
-    int length = collection.Length;
-    //int currentElement = collection[0];
-    int index = 0;
-    int indexc = 0;
-    int[] coltrans = new int[10];
-    //coltrans[0] = currentElement;
-   
-     while (index < length)
-     {
-       //Console.WriteLine(collection[index]);
-       //Console.WriteLine(lim);
-        
-       if(collection[index] <= lim )
-        {
-          coltrans[indexc] = collection[index];
-          indexc++; 
-        }
-         
-         index++; 
-     }
-     return coltrans;
+  int length = collection.Length;
+  //int currentElement = collection[0];
+  int index = 0;
+  int indexc = 0;
+  int[] coltrans = new int[10];
+  //coltrans[0] = currentElement;
+
+  while (index < length)
+  {
+    //Console.WriteLine(collection[index]);
+    //Console.WriteLine(lim);
+
+    if (collection[index] <= lim)
+    {
+      coltrans[indexc] = collection[index];
+      indexc++;
+    }
+
+    index++;
+  }
+  return coltrans;
 }
 
 // 10. функция знакочередования 
 
-int[]  SignOrder(int[] collection)
+int[] SignOrder(int[] collection)
 {
-    int length = collection.Length;
-    int[] coltrans = new int[10];
-    //int currentElement = collection[0];
-    int index = 0;
-    int indexcol = 0;
-    coltrans[indexcol] = collection[index];
-    index++;
-    // bool flagsign = true;
-    
-    //coltrans[0] = currentElement;
-     while (index < length)
-     {
-        if(collection[index] > 0 && coltrans[indexcol] < 0)
-        { 
-          // добавляем в новый массив если элемент с другим знаком
-          indexcol++;
-          coltrans[indexcol] = collection[index];
-        } else
-        {
-            if (collection[index] < 0 && coltrans[indexcol] > 0)
-            {
-                indexcol++;
-                coltrans[indexcol] = collection[index];
-            }
-        }
-        
-            index++;
-        
+  int length = collection.Length;
+  int[] coltrans = new int[10];
+  //int currentElement = collection[0];
+  int index = 0;
+  int indexcol = 0;
+  coltrans[indexcol] = collection[index];
+  index++;
+  // bool flagsign = true;
+
+  //coltrans[0] = currentElement;
+  while (index < length)
+  {
+    if (collection[index] > 0 && coltrans[indexcol] < 0)
+    {
+      // добавляем в новый массив если элемент с другим знаком
+      indexcol++;
+      coltrans[indexcol] = collection[index];
+    }
+    else
+    {
+      if (collection[index] < 0 && coltrans[indexcol] > 0)
+      {
+        indexcol++;
+        coltrans[indexcol] = collection[index];
       }
-     return coltrans;
+    }
+
+    index++;
+
+  }
+  return coltrans;
 }
-     
+
 // Блок формирования и вывода результвта
 //
 // инициируем и заполняем начальный массив A
 int[] arrayA = new int[10];
 
-FillArray(arrayA,5,100);
+FillArray(arrayA, 5, 100);
 
 // печатаем массив A
 Console.Write("Исходный массив А:  ");
@@ -271,7 +272,7 @@ Console.WriteLine("Задача2");
 // инициируем и заполняем начальный массив A
 int[] arrayA2 = new int[10];
 
-FillArray(arrayA2,5,99);
+FillArray(arrayA2, 5, 99);
 
 // печатаем массив A
 Console.Write("Исходный массив А:  ");
@@ -298,7 +299,7 @@ Console.WriteLine();
 
 // формируем массив B со знакочередованием
 // инициируем массив A и B
-FillArray(arrayA2,-5,10);
+FillArray(arrayA2, -5, 10);
 // печатаем массив A
 Console.Write("Массив элементов A:  ");
 PrintArray(arrayA2);
