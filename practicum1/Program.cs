@@ -1,4 +1,5 @@
-﻿//Задача
+﻿//Задача1
+Console.WriteLine("Задача1");
 //Cформировать случайным образом целочисленный массив A из натуральных двузначных чисел. 
 //Создать на его основе масив B, отбрасывая те, которые:
 // - нарушают порядок возрастания
@@ -12,16 +13,19 @@
 // 1. функция получения случайного числа
 int GetRandom(int minValue, int maxValue)
 {
+  
   return new Random().Next(minValue,maxValue);
 }
 // 2. функция заполнения массива
-void FillArray(int[] collection)
+void FillArray(int[] collection, int minel, int maxel)
 {
     int length = collection.Length;
     int index = 0;
      while (index < length)
      {
-         collection[index] = GetRandom(10,100);
+         collection[index] = GetRandom(minel,maxel);
+         //Console.WriteLine(minel);
+         // Console.WriteLine(maxel);
          index++; 
      }
 }
@@ -85,7 +89,7 @@ int[]  ExtractBig(int[] collection, int mean)
      return coltrans;
 }
 
-// 6. функция нахождения спеднего арифметического эл-ов массива
+// 6. функция нахождения среднего арифметического эл-ов массива
 int  MeanArray(int[] collection)
 {
     int length = collection.Length;
@@ -126,7 +130,7 @@ int[]  ExtractEven(int[] collection)
      }
      return coltrans;
 }
-// 8. функция исключения чётных элементов массива 
+// 8. функция исключения нулевых элементов массива 
 
 int[]  TruncZero(int[] collection)
 {
@@ -150,16 +154,75 @@ int[]  TruncZero(int[] collection)
       }
        return col;
 }
+// 9. функция исключения элементов массива > 8
+
+int[]  ExtractMore(int[] collection, int lim)
+{
+    int length = collection.Length;
+    //int currentElement = collection[0];
+    int index = 0;
+    int indexc = 0;
+    int[] coltrans = new int[10];
+    //coltrans[0] = currentElement;
+   
+     while (index < length)
+     {
+       //Console.WriteLine(collection[index]);
+       //Console.WriteLine(lim);
+        
+       if(collection[index] <= lim )
+        {
+          coltrans[indexc] = collection[index];
+          indexc++; 
+        }
+         
+         index++; 
+     }
+     return coltrans;
+}
+
+// 10. функция знакочередования 
+
+int[]  SignOrder(int[] collection)
+{
+    int length = collection.Length;
+    int[] coltrans = new int[10];
+    //int currentElement = collection[0];
+    int index = 0;
+    int indexcol = 0;
+    coltrans[indexcol] = collection[index];
+    index++;
+    // bool flagsign = true;
+    
+    //coltrans[0] = currentElement;
+     while (index < length)
+     {
+        if(collection[index] > 0 && coltrans[indexcol] < 0)
+        { 
+          // добавляем в новый массив если элемент с другим знаком
+          indexcol++;
+          coltrans[indexcol] = collection[index];
+        } else
+        {
+            if (collection[index] < 0 && coltrans[indexcol] > 0)
+            {
+                indexcol++;
+                coltrans[indexcol] = collection[index];
+            }
+        }
+        
+            index++;
+        
+      }
+     return coltrans;
+}
      
-
-
-
 // Блок формирования и вывода результвта
 //
 // инициируем и заполняем начальный массив A
 int[] arrayA = new int[10];
 
-FillArray(arrayA);
+FillArray(arrayA,5,100);
 
 // печатаем массив A
 Console.Write("Исходный массив А:  ");
@@ -195,4 +258,57 @@ arrayB3 = TruncZero(ExtractEven(arrayA));
 Console.Write("Массив нечётных элементов элементов B:  ");
 PrintArray(arrayB3);
 Console.WriteLine();
-// Конец
+// Конец Задачи1
+//
+//Задача2
+Console.WriteLine("Задача2");
+// Имеется числовой массив A заполненный числами из отрезка [minValue;maxValue]. Создать на его основе масив B, отбрасывая те, которые нарушают порядок
+// - возрастания
+// - элементы, больше 8
+// - знакочередования
+// Блок формирования и вывода результвта
+//
+// инициируем и заполняем начальный массив A
+int[] arrayA2 = new int[10];
+
+FillArray(arrayA2,5,99);
+
+// печатаем массив A
+Console.Write("Исходный массив А:  ");
+PrintArray(arrayA2);
+Console.WriteLine();
+
+// Исключение элементов нарушения возрастания
+// инициируем массив B
+int[] arrayB21 = new int[10];
+arrayB21 = TruncZero(ExtractWrong(arrayA2));
+// печатаем массив B
+Console.Write("Массив без нарушения возрастания B:  ");
+PrintArray(arrayB21);
+Console.WriteLine();
+
+// Исключение элементов больших 8
+// инициируем массив B
+int[] arrayB22 = new int[10];
+arrayB22 = TruncZero(ExtractMore(arrayA2, 8));
+// печатаем массив B
+Console.Write("Массив элементов меньших 8 B:  ");
+PrintArray(arrayB22);
+Console.WriteLine();
+
+// формируем массив B со знакочередованием
+// инициируем массив A и B
+FillArray(arrayA2,-5,10);
+// печатаем массив A
+Console.Write("Массив элементов A:  ");
+PrintArray(arrayA2);
+int[] arrayB32 = new int[10];
+
+arrayB32 = TruncZero(SignOrder(arrayA2));
+// печатаем массив B
+Console.Write("Массив элементов со знакочередованием B:  ");
+PrintArray(arrayB32);
+Console.WriteLine();
+
+
+
