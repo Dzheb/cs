@@ -6,9 +6,9 @@
 // 3^4
 
 // функция определения есть ли + в строке
-char IsSign(string entstr)
+char IsSign(string? entstr)
 {
-  int length = entstr.Length;
+  int length = entstr!.Length;
   int i = 0;
   char result = '@';
   while (i < length)
@@ -23,9 +23,9 @@ char IsSign(string entstr)
 }
 
 // функция определения номера знака в строке
-int IndexOf(string entstr, char sign)
+int IndexOf(string? entstr, char sign)
 {
-  int length = entstr.Length;
+  int length = entstr!.Length;
   int i = 0;
   int result = -1;
   while (i < length)
@@ -41,22 +41,22 @@ int IndexOf(string entstr, char sign)
 }
 
 // функция определения первого элемента выражения
-string FindFirst(string entstr, int sign)
+string FindFirst(string? entstr, int sign)
 {
   int i = 0;
   string result = "";
   while (i < sign)
   {
-    result = result + entstr[i];
+    result = result + entstr![i];
     i++;
   }
   return result;
 }
 
 // функция определения второго элемента выражения
-string FindSecond(string entstr, int sign)
+string FindSecond(string? entstr, int sign)
 {
-  int length = entstr.Length;
+  int length = entstr!.Length;
   int i = sign + 1;
   string result = "";
   while (i < length)
@@ -70,7 +70,7 @@ string FindSecond(string entstr, int sign)
 // Основной блок
 // 
 // ввод строки
-string instring = "";
+string? instring = "";
 Console.Write("Введите строку содержащую операцию сложения : ");
 instring = Console.ReadLine();
 
