@@ -71,32 +71,56 @@ string FindSecond(string? entstr, int sign)
 // 
 // ввод строки
 string? instring = "";
-Console.Write("Введите строку содержащую операцию сложения : ");
+Console.Write("Введите строку содержащую операцию '+, / или ^'  : ");
 instring = Console.ReadLine();
-
-// определения операции по знаку
-char sign = IsSign(instring);
-int nsign = IndexOf(instring, sign);
-
-// воспользукмся немножко готовым кодом (Int32)
-// для определения првого и второго операндов
-int numfirst = Int32.Parse(FindFirst(instring, nsign));
-int numsecond = Int32.Parse(FindSecond(instring, nsign));
-// Console.WriteLine(numfirst);
-// Console.WriteLine(numsecond);
-
-
-switch (sign)
+// проверка на пустую строку
+if (instring == "")
 {
-  case '+':
-    Console.WriteLine(numfirst + numsecond);
-    break;
-  case '/':
-    Console.WriteLine(numfirst / numsecond);
-    break;
-  case '^':
-    Console.WriteLine(Math.Pow(numfirst, numsecond));
+  Console.Write("Вы ввели пустую строку");
+}
+else
+{
+  // проверка на знак операции
+  if (IsSign(instring) == '@')
+  {
+    Console.WriteLine("Вы не ввели необходимый знак операции");
+  }
+  else
 
-    break;
+  {
+    Console.WriteLine(IsSign(instring));
+    // определение операции по знаку
+    char sign = IsSign(instring);
+    int nsign = IndexOf(instring, sign);
+    // проверка на ввод операндов
+    if (FindFirst(instring, nsign) == "" || FindSecond(instring, nsign) == "")
+    {
+      Console.WriteLine("Вы не ввели необходимые операторы/оператор");
+    }
+    else
+    {
 
+      // 
+      // для определения первого и второго операндов воспользуемся немножко готовым кодом (Int32.Parse)
+      int numfirst = Int32.Parse(FindFirst(instring, nsign));
+      int numsecond = Int32.Parse(FindSecond(instring, nsign));
+      //
+      //Вывод результата
+      switch (sign)
+      {
+        case '+':
+          Console.WriteLine(numfirst + numsecond);
+          break;
+        case '/':
+          Console.WriteLine(numfirst / numsecond);
+          break;
+        case '^':
+          Console.WriteLine(Math.Pow(numfirst, numsecond));
+          break;
+        default:
+          Console.WriteLine("Вы не ввели в строке оператор для расчёта");
+          break;
+      }
+    }
+  }
 }
