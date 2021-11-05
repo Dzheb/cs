@@ -90,60 +90,149 @@ for (x = -4; x <= 3; x++)
 
   ydouble = Math.Cos((Math.PI * x));
 
-
-
   Console.WriteLine($"x = {x}  y = {ydouble}");
 }
-// Задача 9
+
+
+// Задача 9 - решение в общем виде
 // Проверить, что точка с координатами (x, y) принадлежит фигуре начало координат находится в верхнем левом углу
 // 9.1
-i = 0;
-int j = 0;
+// размеры viewport 4*4
 int maxcol = 4;
 int maxrow = 4;
 // принадлежит ли точка с координатами фигуре 1
-// задание координат x и y двумя массивами
-int[] arrx = { 0, 1, 2, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4 };
-int[] arry = { 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 };
-int xa = 4;
-int ya = 1;
-Boolean match = false;
+// задание координат фигуры x и y двумя массивами
+// фигура П
+// int[] arrxm = { 0, 1, 2, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4 };
+// int[] arrym = { 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 };
+// фигура Q
+// int[] arrxm = { 0, 1, 2, 3, 4, 0, 4, 0, 1, 2, 3, 4, 4 };
+// int[] arrym = { 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 3 };
+// фигура U
+int[] arrxm = { 0, 4, 0, 4, 0, 4, 0, 1, 2, 3, 4 };
+int[] arrym = { 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 3 };
+// задание координат точки
+int xa = 5;
+int ya = 2;
 
-Console.Clear();
-for (j = 0; j < maxrow; j++)
+// рисование фигуры
+WriteFigure(arrxm, arrym, maxrow, maxcol);
+
+// определение принадлежит ли точка данной фигуре
+Console.WriteLine("");
+if (MatchPoint(arrxm, arrym, maxrow, maxcol, xa, ya))
 {
-  if (i == 0)
-  {
-    for (i = 0; i <= maxcol; i++)
-    {
-      Console.SetCursorPosition(i, j);
-      Console.Write("+");
-      if (xa == i && ya == j) match = true;
-
-    }
-  }
-  else
-  {
-    for (i = 0; i <= maxcol; i++)
-    {
-      if (i == 0 || i == maxcol)
-      {
-        if (xa == i && ya == j) match = true;
-        Console.SetCursorPosition(i, j);
-        Console.Write("+");
-      }
-
-    }
-  }
-
-}
-if (match)
-{
-  Console.WriteLine($"Точка с координатами  x: {xa} и y: {ya} принадлежит фигуре");
+  Console.WriteLine($"Точка с координатами  x: {xa} и y: {ya} принадлежит этой фигуре");
 }
 else
 {
-  Console.WriteLine($"Точка с координатами  x: {xa} и y: {ya} не принадлежит фигуре");
+  Console.WriteLine($"Точка с координатами  x: {xa} и y: {ya} не принадлежит этой фигуре");
+}
+
+//
+//
+// блок функций
+// функция рисования фигуры
+void WriteFigure(int[] arrx, int[] arry, int maxrow, int maxcol)
+{
+  i = 0;
+  int j = 0;
+  Console.Clear();
+  int narr = 0;
+
+  for (j = 0; j < maxrow; j++)
+  {
+    for (i = 0; i <= maxcol; i++)
+    {
+      for (narr = 0; narr < arrx.Length; narr++)
+      {
+        if (arrx[narr] == i && arry[narr] == j)
+        {
+          Console.SetCursorPosition(i, j);
+          Console.Write("+");
+          narr++;
+        }
+      }
+    }
+  }
+}
+
+// функция определения лежит ли точка на фигуре
+Boolean MatchPoint(int[] arrx, int[] arry, int maxrow, int maxcol, int x, int y)
+{
+  i = 0;
+  int j = 0;
+  int narr = 0;
+  Boolean match = false;
+
+  for (j = 0; j < maxrow; j++)
+  {
+    for (i = 0; i <= maxcol; i++)
+    {
+      for (narr = 0; narr < arrx.Length; narr++)
+      {
+
+        if (x == i && y == j)
+        {
+          match = true;
+          break;
+        }
+      }
+    }
+  }
+  return match;
 }
 
 
+
+// // Задача 9 первоначальное решение
+// // Проверить, что точка с координатами (x, y) принадлежит фигуре начало координат находится в верхнем левом углу
+// // 9.1
+// i = 0;
+// int j = 0;
+// int maxcol = 4;
+// int maxrow = 4;
+// // принадлежит ли точка с координатами фигуре 1
+// // задание координат x и y двумя массивами
+// int[] arrx = { 0, 1, 2, 3, 4, 0, 4, 0, 4, 0, 4, 0, 4 };
+// int[] arry = { 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 };
+// int xa = 4;
+// int ya = 1;
+// Boolean match = false;
+
+// Console.Clear();
+// for (j = 0; j < maxrow; j++)
+// {
+//   if (i == 0)
+//   {
+//     for (i = 0; i <= maxcol; i++)
+//     {
+//       Console.SetCursorPosition(i, j);
+//       Console.Write("+");
+//       if (xa == i && ya == j) match = true;
+
+//     }
+//   }
+//   else
+//   {
+//     for (i = 0; i <= maxcol; i++)
+//     {
+//       if (i == 0 || i == maxcol)
+//       {
+//         if (xa == i && ya == j) match = true;
+//         Console.SetCursorPosition(i, j);
+//         Console.Write("+");
+//       }
+
+//     }
+//   }
+
+// }
+// if (match)
+// {
+//   Console.WriteLine($"Точка с координатами  x: {xa} и y: {ya} принадлежит фигуре");
+// }
+// else
+// {
+//   Console.WriteLine($"Точка с координатами  x: {xa} и y: {ya} не принадлежит фигуре");
+// }
