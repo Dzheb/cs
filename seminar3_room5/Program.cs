@@ -84,6 +84,32 @@ int Num2(int n)
   int b = s / 10;
   return b;
 }
+//12. Удалить вторую цифру трёхзначного числа
+
+int c = 648;
+Console.WriteLine(DelNum2(c));
+int DelNum2(int c)
+{
+    int a = c/100;
+    int s = c - a*100;
+    int b = s%10;
+    int v = b + a*10;
+    return v;
+}
+// 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
+int a = 15;
+int b = 5;
+Console.WriteLine(a);
+Console.WriteLine(b);
+int result = a / b;
+if (a % b ==0)
+{
+    Console.WriteLine("Кратно");
+}
+else
+{
+    System.Console.WriteLine("Остаток = " + a % b);
+}
 
 // 14. Найти третью цифру числа или сообщить, что её нет
 
