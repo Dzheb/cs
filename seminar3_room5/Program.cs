@@ -95,13 +95,17 @@ int Exc2(int n)
   return a * 10 + s % 10;
 }
 
-// // 14. Найти третью цифру числа или сообщить, что её нет
-// int n12 = 123;
-// Console.WriteLine(Exc2(n12));
-// int Exc2(int n)
-// {
-//   int a = n / 100;
-//   int s = n - a * 100;
-//   //int b = s / 10;
-//   return a * 10 + s % 10;
-// }
+// 14. Найти третью цифру числа или сообщить, что её нет
+
+int numb = 15567;
+if (numb < 100)
+{
+  Console.WriteLine("Третьей цифры нет");
+}
+else
+{
+  string number = Convert.ToString(numb);
+  int index = 2;
+
+  Console.WriteLine(number[index]);
+}
