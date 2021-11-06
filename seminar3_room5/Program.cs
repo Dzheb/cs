@@ -68,15 +68,15 @@ Boolean IsEven(int num)
 }
 
 //  8. Показать четные числа от 1 до N
-for (int n = 1; n <= 10; n++)
+
+for (int i = 1; i <= 10; i++)
 {
-  if (n % 2 == 0)
-    Console.WriteLine(n);
+  if (i % 2 == 0)
+    Console.WriteLine(i);
 }
 //10. Показать вторую цифру трёхзначного числа
-
-int n = 864;
-Console.WriteLine(Num2(n));
+int n10 = 778;
+Console.WriteLine(Num2(n10));
 int Num2(int n)
 {
   int a = n / 100;
@@ -84,5 +84,24 @@ int Num2(int n)
   int b = s / 10;
   return b;
 }
+// 12. Удалить вторую цифру трёхзначного числа
+int n12 = 123;
+Console.WriteLine(Exc2(n12));
+int Exc2(int n)
+{
+  int a = n / 100;
+  int s = n - a * 100;
+  //int b = s / 10;
+  return a * 10 + s % 10;
+}
 
-
+// // 14. Найти третью цифру числа или сообщить, что её нет
+// int n12 = 123;
+// Console.WriteLine(Exc2(n12));
+// int Exc2(int n)
+// {
+//   int a = n / 100;
+//   int s = n - a * 100;
+//   //int b = s / 10;
+//   return a * 10 + s % 10;
+// }
