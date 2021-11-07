@@ -121,3 +121,75 @@ else
 // 20. Задать номер четверти, показать диапазоны для возможных координат
 // 21. Программа проверяет пятизначное число на палиндромом.
 // 22. Найти расстояние между точками в пространстве 2D/3D
+
+// 15.
+//int n15 = new Random().Next(1, 1000);
+int n15 = 161;
+if (Is7and23(n15))
+{
+  Console.WriteLine($"Число {n15} кратно 7 и 23");
+}
+else
+  Console.WriteLine($"Число {n15} не кратно 7 и 23");
+
+bool Is7and23(int n15)
+{
+  if (n15 % 7 == 0)
+  {
+    if (n15 % 23 == 0) return true;
+  }
+  return false;
+
+}
+// 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным 
+int dayoweek = new Random().Next(1, 7);
+if (IsHolly(dayoweek))
+{
+  Console.WriteLine($"{dayoweek} -й день Выходной");
+}
+else
+{
+  Console.WriteLine($"{dayoweek} -й день Рабочий");
+}
+
+bool IsHolly(int dow)
+{
+  if (dow == 6 || dow == 7)
+  {
+    return true;
+  }
+  return false;
+}
+// 21. Программа проверяет пятизначное число на палиндромом.
+
+int n21 = 34843;
+
+if (NumDec(n21, 1) == NumDec(n21, 5) && NumDec(n21, 2) == NumDec(n21, 4))
+{
+  Console.WriteLine($"Число {n21} палиндром");
+}
+else
+{
+  Console.WriteLine($"Число {n21}  не палиндром");
+}
+
+// нахождение цифры десятичного разряда n
+int NumDec(int num, int n)
+{
+  if (n == 1)
+  {
+    return num % 10;
+  }
+  return num / Pow10(n - 1) % Pow10(1);
+}
+
+// возведение 10 в степень n
+int Pow10(int npow)
+{
+  int res = 1;
+  for (int i = 0; i < npow; i++)
+  {
+    res = res * 10;
+  }
+  return res;
+}
