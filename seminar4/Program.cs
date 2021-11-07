@@ -193,3 +193,18 @@ int Pow10(int npow)
   }
   return res;
 }
+// 22. Найти расстояние между точками в пространстве 2D/3D
+int[] coora = { 2, 2, 1 };
+int[] coorb = { 7, 8, 1 };
+Console.WriteLine(LenVec(coora, coorb));
+double LenVec(int[] a, int[] b)
+{
+  int ax = a[0];
+  int ay = a[1];
+  int az = a[2];
+  int bx = a[0];
+  int by = a[1];
+  int bz = a[2];
+  Console.WriteLine(Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2) + Math.Pow((bz - az), 2)));
+  return Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2) + Math.Pow((bz - az), 2));
+}
