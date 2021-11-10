@@ -167,6 +167,19 @@ bool IsHolly(int dow)
   }
   return false;
 }
+// 18. Проверить истинность утверждения ¬(X ⋁ Y) = ¬X ⋀ ¬Y
+bool x18 = true;
+bool y18 = false;
+bool exp18one = !(x18 && y18);
+bool exp18two = !x18 || !y18;
+Console.WriteLine($"Выражение ¬(X ⋁ Y) = ¬X ⋀ ¬Y истинно ? {CheckBool(exp18one, exp18two)}");
+// проверка истинности выражения
+bool CheckBool(bool exp18one, bool exp18two)
+{
+  return exp18one == exp18two;
+}
+
+
 // 21. Программа проверяет пятизначное число на палиндромом.
 
 int n21 = 34043;
@@ -226,6 +239,19 @@ double LenVec(int[] a, int[] b)
   int by = b[1];
   int bz = b[2];
   return Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2) + Math.Pow((bz - az), 2));
+}
+// 26. Возвести число А в натуральную степень В используя цикл
+int a26 = 4;
+int b26 = 3;
+Console.WriteLine(Power(a26, b26));
+int Power(int a26, int b26)
+{
+  int res = 1;
+  for (int i = 0; i < b26; i++)
+  {
+    res = res * a26;
+  }
+  return res;
 }
 // 27. Определить количество цифр в числе
 int n27 = 57346;
