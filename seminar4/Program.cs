@@ -178,6 +178,23 @@ bool CheckBool(bool exp18one, bool exp18two)
 {
   return exp18one == exp18two;
 }
+// 19. Определить номер четверти плоскости, в которой находится точка с координатами Х и У, причем X ≠ 0 и Y ≠ 0
+int x19 = 1;
+int y19 = -1;
+
+Console.WriteLine($"Точка x: {x19}  y: {y19} принадлежит {NumQuarter(x19, y19)} четверти");
+
+string NumQuarter(int x19, int y19)
+{
+
+  string res = "";
+  if (x19 > 0 && y19 > 0) res = "первой";
+  if (x19 < 0 && y19 > 0) res = "второй";
+  if (x19 < 0 && y19 < 0) res = "третьей";
+  if (x19 > 0 && y19 < 0) res = "четвёртой";
+  return res;
+
+}
 
 
 // 21. Программа проверяет пятизначное число на палиндромом.
