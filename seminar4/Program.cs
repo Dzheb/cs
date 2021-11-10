@@ -121,6 +121,13 @@ else
 // 20. Задать номер четверти, показать диапазоны для возможных координат
 // 21. Программа проверяет пятизначное число на палиндромом.
 // 22. Найти расстояние между точками в пространстве 2D/3D
+// 23. Показать таблицу квадратов чисел от 1 до N
+// 24. Найти кубы чисел от 1 до N
+// 25. Найти сумму чисел от 1 до А
+// 26. Возвести число А в натуральную степень В используя цикл
+// 27. Определить количество цифр в числе
+// 28. Подсчитать сумму цифр в числе
+// .. 
 
 // 15.
 //int n15 = new Random().Next(1, 1000);
@@ -162,7 +169,7 @@ bool IsHolly(int dow)
 }
 // 21. Программа проверяет пятизначное число на палиндромом.
 
-int n21 = 34843;
+int n21 = 34043;
 
 if (NumDec(n21, 1) == NumDec(n21, 5) && NumDec(n21, 2) == NumDec(n21, 4))
 {
@@ -194,17 +201,57 @@ int Pow10(int npow)
   return res;
 }
 // 22. Найти расстояние между точками в пространстве 2D/3D
-int[] coora = { 2, 2, 1 };
-int[] coorb = { 7, 8, 1 };
-Console.WriteLine(LenVec(coora, coorb));
+// для 2D
+int[] coora2 = { 2, 7 };
+int[] coorb2 = { 7, 8 };
+Console.WriteLine(LenVec2(coora2, coorb2));
+double LenVec2(int[] a, int[] b)
+{
+  int ax = a[0];
+  int ay = a[1];
+  int bx = b[0];
+  int by = b[1];
+  return Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2));
+}
+// для 3D
+int[] coora3 = { 2, 2, 1 };
+int[] coorb3 = { 7, 8, 1 };
+Console.WriteLine(LenVec(coora3, coorb3));
 double LenVec(int[] a, int[] b)
 {
   int ax = a[0];
   int ay = a[1];
   int az = a[2];
-  int bx = a[0];
-  int by = a[1];
-  int bz = a[2];
-  Console.WriteLine(Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2) + Math.Pow((bz - az), 2)));
+  int bx = b[0];
+  int by = b[1];
+  int bz = b[2];
   return Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2) + Math.Pow((bz - az), 2));
 }
+// 27. Определить количество цифр в числе
+int n27 = 57346;
+Console.WriteLine($"Количество цифр в числе {n27} :{HowMany(n27)}");
+
+int HowMany(int n27)
+{
+  int res = 1;
+  while (n27 / Pow10(res) != 0)
+  {
+    res++;
+  }
+  return res;
+}
+// 28. Подсчитать сумму цифр в числе
+int n28 = 95038;
+int n28len = HowMany(n28);
+Console.WriteLine($"Сумма цифр в числе {n28} :{SumN(n28, n28len)}");
+
+int SumN(int num, int numlen)
+{
+  int res = 0;
+  for (int i = 1; i <= numlen; i++)
+  {
+    res = res + NumDec(num, i);
+  }
+  return res;
+}
+
