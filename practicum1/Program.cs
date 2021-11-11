@@ -311,5 +311,113 @@ Console.Write("Массив элементов со знакочередован
 PrintArray(arrayB32);
 Console.WriteLine();
 
+// Задача 5
+// Проверить, что натуральное число m
+// является счастливым пятизначным
+// образовано тремя цифрами, составляющими арифметическую прогрессию
+// образовано четырмя одинаковыми цифрами
+int m5 = 10575;
+if (IsLucky(m5) && HowMany(m5) == 5)
+{
+  Console.WriteLine($"Число {m5} счастливое пятизначное");
+}
+else
+{
+  Console.WriteLine($"Число {m5} несчастливоене или непятизначное");
+}
+// проверка является ли число счастливым
+bool IsLucky(int m5)
+{
+  bool res = false;
+  // задаём количество циклов проверки 10000
 
+  for (int i = 0; i < 10000; i++)
+  {
+    //Console.WriteLine($"Следующее число: {SumPow2(m5)}");
+    m5 = SumPow2(m5);
+    // если результат равен 1 выходим из цикла
+    if (m5 == 1)
+    {
+      res = true;
+      break;
+    }
+  }
+  return res;
+}
 
+// нахождение суммы квадратов разрядов числа
+int SumPow2(int sumelms)
+{
+  int res = 0;
+  for (int i = 1; i <= HowMany(sumelms); i++)
+  {
+    res = res + Pow2(NumDec(sumelms, i));
+  }
+  return res;
+}
+
+// возведение в квадрат числа
+int Pow2(int m5)
+{
+  return m5 * m5;
+}
+// определение количества разрядов в числе
+int HowMany(int n27)
+{
+  int res = 1;
+  while (n27 / Pow10(res) != 0)
+  {
+    res++;
+  }
+  return res;
+}
+// нахождение цифры десятичного разряда n
+int NumDec(int num, int n)
+{
+  if (n == 1)
+  {
+    return num % 10;
+  }
+  return num / Pow10(n - 1) % Pow10(1);
+}
+
+// возведение 10 в степень n
+int Pow10(int npow)
+{
+  int res = 1;
+  for (int i = 0; i < npow; i++)
+  {
+    res = res * 10;
+  }
+  return res;
+}
+// образовано тремя цифрами, составляющими арифметическую прогрессию
+m5 = 777;
+
+if (HowMany(m5) == 3 && IsProgr(m5))
+{
+  Console.WriteLine($"Число {m5} трёхзначное и с арифметической прогрессией");
+}
+// проверка на арифметическую прогрессию
+bool IsProgr(int m5)
+{
+  if (NumDec(m5, 3) - NumDec(m5, 2) == NumDec(m5, 2) - NumDec(m5, 1)) return true;
+  else return false;
+}
+// образовано четырьмя одинаковыми цифрами
+m5 = 1111;
+
+if (HowMany(m5) == 4 && IsEqual(m5))
+{
+  Console.WriteLine($"Число {m5} образовано четырьмя одинаковыми цифрами");
+}
+else
+{
+  Console.WriteLine($"Число {m5} образовано  не четырьмя одинаковыми цифрами");
+}
+// проверка на арифметическую прогрессию
+bool IsEqual(int m5)
+{
+  if (NumDec(m5, 1) == NumDec(m5, 2) && NumDec(m5, 1) == NumDec(m5, 3) && NumDec(m5, 1) == NumDec(m5, 4)) return true;
+  else return false;
+}
