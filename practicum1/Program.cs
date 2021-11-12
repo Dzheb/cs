@@ -421,3 +421,78 @@ bool IsEqual(int m5)
   if (NumDec(m5, 1) == NumDec(m5, 2) && NumDec(m5, 1) == NumDec(m5, 3) && NumDec(m5, 1) == NumDec(m5, 4)) return true;
   else return false;
 }
+// Задача 6
+// Выяснить является ли вещественное m
+// целой степенью числа 3
+// корнем целой степени из 5,
+// синусом угла кратного 45 градусам
+double m6 = 625.789;
+int m6int = Convert.ToInt32(m6);
+// задаём базу - число 3
+int base3 = 3;
+if (IsPwr3(m6, base3) && Convert.ToDouble(m6int) == m6)
+  Console.WriteLine($"{m6} является целой степенью {base3}");
+else Console.WriteLine($"{m6} не является целой степенью {base3}");
+// метод проверки явяется ли м6 целой степенью 3
+bool IsPwr3(double m6, int base3)
+{
+  bool res = false;
+  int m6int = Convert.ToInt32(m6);
+  int i = 0;
+  int pwres = Convert.ToInt32(Math.Pow(base3, i));
+  while (m6int > pwres)
+  {
+    i++;
+    pwres = Convert.ToInt32(Math.Pow(base3, i));
+  }
+  if (m6int == pwres) res = true;
+  return res;
+
+}
+
+
+// корнем целой степени из 5,
+double mpwr5 = 5;
+double mroot5 = Math.Sqrt(mpwr5);
+if (IsRoot5(mpwr5, mroot5))
+{
+
+  Console.WriteLine($"{mroot5} является корнем {mpwr5}");
+}
+
+bool IsRoot5(double mpwr5, double mroot5)
+{
+  bool res = false;
+  int i = 0;
+  double pwres = Math.Pow(mroot5, i);
+  while (Convert.ToInt32(mpwr5) >= pwres)
+  {
+    i++;
+    pwres = Math.Pow(mroot5, i);
+  }
+  if (Math.Round(mpwr5) == Math.Round(pwres)) res = true;
+
+  return res;
+}
+// синусом угла кратного 45 градусам
+double anglesin = -0.7071067811865477;
+if (Sin45(anglesin))
+{
+  Console.WriteLine($"{anglesin} является sin угла кратного 45 градусов");
+}
+else
+{
+  Console.WriteLine($"{anglesin} не является sin угла кратного 45 градусов");
+}
+// проверка является ли anglesin синусом угла кратного 45 градусам
+bool Sin45(double anglesin)
+{
+  bool res = false;
+  for (int i = 0; i < 8; i++)
+  {
+    Console.WriteLine($"Синус угла {anglesin}  {Math.Sin(Math.PI * i / 4)}");
+    if (anglesin == Math.Sin(Math.PI * i / 4)) res = true;
+  }
+  return res;
+}
+
