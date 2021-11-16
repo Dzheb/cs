@@ -130,14 +130,6 @@ else
 // 29. Написать программу вычисления произведения чисел от 1 до N
 // 30. Показать кубы чисел, заканчивающихся на четную цифру
 //
-// (int x, int y) GetPoint2D()
-// {
-//   return(x:10, y:20);
-// }
-// (int px, int pY) point = GetPoint2D();
-// System.Console.WriteLine(point);
-// Console.WriteLine(point);
-// Console.WriteLine(point.pX);
 // Почувствуй себя сеньором*
 // 31. Задать массив из 8 элементов и вывести их на экран
 // 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их на экран
@@ -149,15 +141,6 @@ else
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
-//
-// Почувствуй себя лидом*
-// 41. Выяснить являются ли три числа сторонами треугольника
-// 42. Определить сколько чисел больше 0 введено с клавиатуры
-// 43. Написать программу преобразования десятичного числа в двоичное
-// 44. Найти точку пересечения двух прямых заданных уравнением y=kx+b, а1 k1 и а2 и k2 заданы
-// 45. Показать числа Фибоначчи
-// 46. Написать программу масштабирования фигуры
-// 47. Написать программу копирования массива
 
 // 15.
 //int n15 = new Random().Next(1, 1000);
@@ -216,19 +199,15 @@ Console.WriteLine($"Точка x: {x19}  y: {y19} принадлежит {NumQua
 
 string NumQuarter(int x19, int y19)
 {
-
   string res = "";
   if (x19 > 0 && y19 > 0) res = "первой";
   if (x19 < 0 && y19 > 0) res = "второй";
   if (x19 < 0 && y19 < 0) res = "третьей";
   if (x19 > 0 && y19 < 0) res = "четвёртой";
   return res;
-
 }
 
-
 // 21. Программа проверяет пятизначное число на палиндромом.
-
 int n21 = 34043;
 
 if (NumDec(n21, 1) == NumDec(n21, 5) && NumDec(n21, 2) == NumDec(n21, 4))
@@ -287,10 +266,45 @@ double LenVec(int[] a, int[] b)
   int bz = b[2];
   return Math.Sqrt(Math.Pow((bx - ax), 2) + Math.Pow((by - ay), 2) + Math.Pow((bz - az), 2));
 }
+// 23. Показать таблицу квадратов чисел от 1 до N
+int N = 10;
+int[] array = new int[10];
+for (int i = 0; i < N; i++)
+{
+  array[i] = (i + 1) * (i + 1);
+}
+System.Console.WriteLine("Задача 23");
+PrintArray(array);
+
+// 24. Найти кубы чисел от 1 до N
+int N24 = 10;
+int[] array24 = new int[N24];
+for (int i = 0; i < N24; i++)
+{
+  array[i] = (i + 1) * (i + 1) * (i + 1);
+}
+System.Console.WriteLine("Задача 24");
+PrintArray(array);
+
+// 25. Найти сумму чисел от 1 до А
+int A = 10;
+
+Console.WriteLine($"Сумма чисел от 1 до А: {SumNum(A)}");
+
+int SumNum(int A)
+{
+  int res = 0;
+  for (int i = 1; i <= A; i++)
+  {
+    res = res + i;
+  }
+  return res;
+}
 // 26. Возвести число А в натуральную степень В используя цикл
 int a26 = 4;
 int b26 = 3;
-Console.WriteLine(Power(a26, b26));
+Console.WriteLine($"{a26} в степени {b26}: {Power(a26, b26)} ");
+
 int Power(int a26, int b26)
 {
   int res = 1;
@@ -328,73 +342,7 @@ int SumN(int num, int numlen)
   return res;
 }
 
-// 23. Показать таблицу квадратов чисел от 1 до N
-
-// Показать таблицу квадратов чисел от 1 до N
-
-int N = 10;
-int[] array = new int[10];
-for (int i = 0; i < N; i++)
-{
-  array[i] = (i + 1) * (i + 1);
-}
-PrintArray(array);
-void PrintArray(int[] array)
-{
-  for (int i = 0; i < array.Length; i++)
-  {
-    Console.WriteLine(array[i]);
-  }
-}
-// 24. Найти кубы чисел от 1 до N
-// Показать таблицу квадратов чисел от 1 до N
-
-// int N = 10;
-// int[] array = new int[10];
-// for (int i = 0; i < N; i++)
-// {
-//   array[i] = (i + 1) * (i + 1);
-// }
-// PrintArray(array);
-// void PrintArray(int[] array)
-// {
-//   for (int i = 0; i < array.Length; i++)
-//   {
-//     Console.WriteLine(array[i]);
-//   }
-// }
-// // 25. Найти сумму чисел от 1 до А
-int A = 10;
-
-Console.WriteLine($"Сумма чисел от 1 до А: {SumNum(A)}");
-
-int SumNum(int A)
-{
-  int res = 0;
-  for (int i = 1; i <= A; i++)
-  {
-    res = res + i;
-  }
-  return res;
-}
-// 26. Возвести число А в натуральную степень В используя цикл
-int A26 = 5;
-int B26 = 4;
-
-Console.WriteLine($"{A26} в степени {B26}: {PwrAB(A26, B26)} ");
-
-int PwrAB(int A26, int B26)
-{
-  int res = 1;
-  for (int i = 1; i <= B26; i++)
-  {
-    //Console.WriteLine($"A в степени B: {res} ");
-    res = res * A26;
-
-  }
-  return res;
-}
-// Написать программу вычисления произведения чисел от 1 до N
+// 29. Написать программу вычисления произведения чисел от 1 до N
 int N29 = 9;
 Console.WriteLine($"Факториал {N29} равен  {Fact(N29)} ");
 
@@ -408,17 +356,62 @@ int Fact(int N29)
   }
   return res;
 }
-// Показать кубы чисел, заканчивающихся на четную цифру
+// 30. Показать кубы чисел, заканчивающихся на четную цифру
+int N30 = 10;
+int[] array30 = new int[N30];
+Console.WriteLine("Массив кубов чисел");
+PrintArray(FillArrayCube(array30));
+Console.WriteLine("Массив чётных кубов чисел");
+PrintArray(ContCubeEven(FillArrayCube(array30)));
+Console.WriteLine("Конец Задачи 30");
+
+// создание массива кубов чисел
+int[] FillArrayCube(int[] arraycube)
+{
+  int count = arraycube.Length;
+  int[] result = new int[count];
+  for (int i = 0; i < count; i++)
+  {
+    result[i] = i * i * i;
+  }
+  return result;
+}
+// создание массива чётных кубоа чисел
+int[] ContCubeEven(int[] numcubes)
+{
+  int numeven = 0;
+  for (int i = 0; i < numcubes.Length; i++)
+  {
+
+    if (numcubes[i] % 2 == 0) numeven++;
+  }
+  int[] res = new int[numeven];
+  int evencount = 0;
+  for (int i = 0; i < numcubes.Length; i++)
+  {
+    if (numcubes[i] % 2 == 0)
+    {
+      res[evencount] = numcubes[i];
+      evencount++;
+    }
+  }
+  return res;
+}
+
 
 // 31. Задать массив из 8 элементов и вывести их на экран
+int count31 = 8;
+int[] arr31 = CreateArray(count31);
+Console.WriteLine("Задача 31");
+FillArray(arr31);
+PrintArray(arr31);
 
 // 33. Задать массив из 12 элементов, заполненных числами из [0,9]. Найти сумму положительных/отрицательных элементов массива
 
 int[] arr33 = new int[12];
 int[] arr33test = new int[12];
 arr33test = FillArr33(arr33);
-
-PrintArray(arr33test);
+//PrintArray(arr33test);
 Console.WriteLine($"Задача 33 сумма равна : {SumArr33pos(arr33test)}");
 Console.WriteLine($"Задача 33 сумма отрицательных : {SumArr33neg(arr33test)}");
 
@@ -515,7 +508,7 @@ bool IsNumIn(int[] arr35, int num35)
 // 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
 
 int[] arr36 = FillArr36(10);
-PrintArrayS(arr36);
+PrintArray(arr36);
 Console.WriteLine($"Задача 36 количество чётных чисел: {ContEven(arr36)}");
 Console.WriteLine($"Задача 36 количество нечётных чисел: {ContOdd(arr36)}");
 
@@ -552,33 +545,236 @@ int ContOdd(int[] arr)
   }
   return result;
 }
-// Задать массив из 12 элементов, заполненных числами из [0,9].
-// Найти сумму положительных/отрицательных элементов массива
+// 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
+int[] arr37 = new int[123];
+FillArray2(arr37, 0, 999);
+Console.WriteLine("Задача 37");
+PrintArray(arr37);
+Console.WriteLine($"Количество элементов из отрезка [10,99] : {QuantNumArr(arr37, 10, 99)}");
+int QuantNumArr(int[] arr, int minval, int maxval)
+{
+  int res = 0;
+  for (int i = 0; i < arr.Length; i++)
+  {
+    if (arr[i] >= minval && arr[i] <= maxval) res++;
+  }
+  return res;
+}
+// 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
+int[] arr38 = new int[5];
+FillArray2(arr38, 0, 999);
+Console.WriteLine("Задача 38");
+PrintArray(arr38);
+Console.WriteLine($"Сумма нечетных элементов : {SumOddArr(arr38)}");
+int SumOddArr(int[] arr)
+{
+  int res = 0;
+  for (int i = 0; i < arr.Length; i++)
+  {
 
-// int[] CreateArray(int count)
+    if (i % 2 != 0) res = res + arr[i];
+  }
+  return res;
+}
+// 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+// int[] arr3 9= new int[5];
+// FillArray2(arr39, 0, 999);
+// Console.WriteLine("Задача 39");
+// PrintArray(arr39);
+// Console.WriteLine($"Сумма пар элементов : {SumMariage(arr39)}");
+// int SumMariage(int[] arr)
 // {
-//     return new int[count];
-// }
+//   int res = 0;
+//   for (int i = 0; i < arr.Length; i++)
+//   {
 
-// void FillArray(int[] array)
-// {
-//     int count = array.Length;
-//     for (int i = 0; i < count; i++)
-//     {
-//         array[i] = new Random().Next(0, 10);
-//     }
+//     if (i % 2 != 0) res = res + arr[i];
+//   }
+//   return res;
 // }
+int[] Array(int count)
+{
+  int[] arr = new int[count];
+  for (int i = 0; i < arr.Length; i++)
+  {
+    arr[i] = new Random().Next(1, 150);
+  }
+  return arr;
+}
+int[] arr39 = Array(10);
+System.Console.WriteLine("Задача 39:");
+PrintArrayS(arr39);
+System.Console.WriteLine("Произведение пар чисел массива:");
+PrintArrayS(Method2(arr39));
 
-// void FillArray2(int[] array, int minValue, int maxValue)
-// {
-//     int count = array.Length;
-//     for (int i = 0; i < count; i++)
-//     {
-//         array[i] = new Random().Next(minValue, maxValue);
-//     }
-// }
+// int[] arr392 = Method2(arr39);
 
+int[] Method2(int[] arr39)
+{
+  int length = arr39.Length;
+  int length2 = length / 2;
+  int[] arr392 = new int[length2];
+  for (int i = 0; i < length2; i++)
+  {
+    // System.Console.WriteLine(i);
+    // System.Console.WriteLine(length2);
+    arr392[i] = arr39[i] * arr39[length - i - 1];
+  }
+  return arr392;
+}
 void PrintArrayS(int[] array)
+{
+  int count = array.Length;
+  for (int i = 0; i < count; i++)
+  {
+    Console.WriteLine($"{array[i]} ");
+  }
+}
+
+// 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+double[] arr40 = new double[2];
+FillArrayDouble(arr40, 10, 999);
+Console.WriteLine("");
+PrintArrayDouble(arr40);
+Console.WriteLine("");
+(double min, double max) minmax = MinMaxVal(arr40);
+Console.WriteLine($"Задача 40 минимум {minmax.min} и максимум: {minmax.max}");
+Console.WriteLine($"Разница между минимум и максимум: {minmax.max - minmax.min}");
+
+(double min, double max) MinMaxVal(double[] arr)
+{
+  double min = arr[0];
+  double max = arr[0];
+  for (int i = 0; i < arr.Length; i++)
+  {
+    if (arr[i] > max) max = arr[i];
+    if (arr[i] < min) min = arr[i];
+
+  }
+
+  return (min, max);
+}
+// Почувствуй себя лидом*
+// 41. Выяснить являются ли три числа сторонами треугольника
+// 42. Определить сколько чисел больше 0 введено с клавиатуры
+// 43. Написать программу преобразования десятичного числа в двоичное
+// 44. Найти точку пересечения двух прямых заданных уравнением y=kx+b, а1 k1 и а2 и k2 заданы
+// 45. Показать числа Фибоначчи
+// 46. Написать программу масштабирования фигуры
+// 47. Написать программу копирования массива
+//
+//
+// 41. Выяснить являются ли три числа сторонами треугольника
+Console.WriteLine("Задача 41");
+Console.WriteLine($"Отрезки 5, 5, 5 формируют {Triangle(5, 5, 5)}");
+
+string Triangle(int a, int b, int c)
+{
+  string res = string.Empty;
+  if ((a >= b + c) || (b >= a + c) || (c >= a + b))
+    // не треугольник
+    res = "не треугольник";
+  else if (a == b && b == c)
+    // равносторонний
+    res = "равносторонний треугольник";
+  else if ((a == b) || (a == c) || (b == c))
+    // равнобедренный
+    res = "равнобедренный треугольник";
+  else
+    res = "просто треугольник";
+  // просто треугольник
+  return res;
+}
+
+// 42. Определить сколько чисел больше 0 введено с клавиатуры
+// string enttring = string.Empty;
+//char a42 = '4';
+//int ia = a42 - '1';
+//Console.Write(ia);
+Console.WriteLine("Задача 42");
+
+Console.WriteLine("Нажмите <Enter> для выхода... ");
+ConsoleKeyInfo inch;
+int res = 0;
+do
+{
+  inch = Console.ReadKey();
+  if (Convert.ToInt32(inch.Key) > 48 && Convert.ToInt32(inch.Key) < 58) res++;
+}
+while (inch.Key != ConsoleKey.Enter);
+Console.WriteLine($"Введено {res} цифр больше 0");
+
+// 43. Написать программу преобразования десятичного числа в двоичное
+//string BinaryCode = Convert.ToString(123, 2);
+
+Console.WriteLine(Convert.ToString(123, 2));
+// int n43 = 999;
+int n43 = 999;
+Console.WriteLine($"Задача 43 {OverStr(IntToBin(n43))}");
+
+string OverStr(string stringover)
+{
+  string res = string.Empty;
+  for (int i = 0; i < stringover.Length; i++)
+  {
+    res = res + stringover[stringover.Length - i - 1];
+  }
+  return res;
+}
+
+string IntToBin(int num)
+{
+  string res = string.Empty;
+  while (num >= 1)
+  {
+    res = res + $"{num % 2}";
+    num /= 2;
+  }
+  return res;
+}
+
+
+//Методы для обработки массивов
+
+int[] CreateArray(int count)
+{
+  return new int[count];
+}
+
+void FillArray(int[] array)
+{
+  int count = array.Length;
+  for (int i = 0; i < count; i++)
+  {
+    array[i] = new Random().Next(0, 10);
+  }
+}
+
+void FillArray2(int[] array, int minValue, int maxValue)
+{
+  int count = array.Length;
+  for (int i = 0; i < count; i++)
+  {
+    array[i] = new Random().Next(minValue, maxValue);
+  }
+}
+void FillArrayDouble(double[] array, int minValue, int maxValue)
+{
+  int count = array.Length;
+  for (int i = 0; i < count; i++)
+  {
+    array[i] = new Random().NextDouble() * new Random().Next(minValue, maxValue);
+  }
+}
+void PrintArray(int[] array)
+{
+  int count = array.Length;
+  for (int i = 0; i < count; i++)
+  {
+    Console.Write($"{array[i]} ");
+  }
+}
+void PrintArrayDouble(double[] array)
 {
   int count = array.Length;
   for (int i = 0; i < count; i++)
@@ -619,10 +815,11 @@ void PrintArrayS(int[] array)
 
 // (int x, int y) GetPoint2D()
 // {
-//     return (x: 10, y: 20);
+//   return (x: 10, y: 20);
 // }
 
 // (int pX, int pY) point = GetPoint2D();
-// Console.WriteLine(point);
+// Console.WriteLine($"Координаты точки возвращает 2 параметра {point}");
 // Console.WriteLine(point.pX);
 // Console.WriteLine(point.pY);
+
