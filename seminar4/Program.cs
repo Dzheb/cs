@@ -732,6 +732,26 @@ string IntToBin(int num)
   }
   return res;
 }
+// 44. Найти точку пересечения двух прямых заданных уравнением y=kx+b, b1 k1 и b2 и k2 заданы
+// k1x + b1 = k2x + b2 => x(k1 - k2) = b2 - b1 => x = (b2 - b1) / (k1 - k2)
+// y = k1x+b1
+double k144 = 3;
+double k244 = 5;
+double b144 = 10;
+double b244 = 5;
+
+double pX = FindX(k144, k244, b144, b244);
+double pY = k144 * pX + b144;
+System.Console.WriteLine($"Задача 44 точка пересечения X = {pX} Y = {pY}");
+
+
+double FindX(double k144, double k244, double b144, double b244)
+
+{
+  double res = (b244 - b144) / (k144 - k244);
+  return res;
+}
+
 
 
 //Методы для обработки массивов
