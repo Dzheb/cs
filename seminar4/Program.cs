@@ -752,7 +752,70 @@ double FindX(double k144, double k244, double b144, double b244)
   return res;
 }
 
+// 45. Показать числа Фибоначчи первые два числа равны 0 и 1, а каждое 
+// последующее число равно сумме двух предыдущих чисел. 
+System.Console.WriteLine("Задача 45");
+PrintArray(Fibon(CreateArray(20)));
 
+// int[] CreateArray(int count)
+// {
+//   int[] array = new int[count];
+//   return array;
+// }
+
+int[] Fibon(int[] arr)
+{
+  arr[0] = 0; arr[1] = 1;
+  int length = arr.Length;
+  for (int i = 2; i < length;
+   i++)
+  {
+    arr[i] = arr[i - 1] + arr[i - 2];
+  }
+  return arr;
+}
+
+// 46. Написать программу масштабирования фигуры
+
+// x*x + y*y = r*r =>y = (r*r - x*x)/y
+// int x46;
+// int y46;
+// int R46 = 10;
+// Console.Clear();
+// Console.SetWindowPosition(0, 0);
+// for (x46 = 0; x46 < 10; x46++)
+// {
+//   y46 = Convert.ToInt32(Math.Sqrt(R46 * R46 - x46 * x46));
+//   Console.SetCursorPosition(x46, y46);
+
+//   Console.Write("+");
+
+// }
+
+// 47. Написать программу копирования массива
+
+int[] arr47 = CreateArray(10);
+FillArray(arr47);
+// метод 1
+int[] arr47copy = arr47;
+System.Console.WriteLine("");
+System.Console.WriteLine("Задача 47");
+PrintArray(arr47);
+System.Console.WriteLine("");
+PrintArray(arr47copy);
+System.Console.WriteLine("");
+PrintArray(CopyArray(arr47));
+
+// метод 2
+int[] CopyArray(int[] initarr)
+{
+  int[] res = new int[initarr.Length];
+  for (int i = 0; i < initarr.Length; i++)
+  {
+    res[i] = initarr[i];
+  }
+  return res;
+}
 
 //Методы для обработки массивов
 
