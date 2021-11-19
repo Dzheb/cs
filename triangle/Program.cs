@@ -18,7 +18,7 @@ for (double y = r; y >= -r; --y)
     double value = x * x + y * y;
     if (value == r * r)
     {
-
+      Console.SetCursorPosition(Convert.ToInt32(x), Convert.ToInt32(y));
       Console.Write(".");
     }
 
