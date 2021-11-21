@@ -691,18 +691,57 @@ string Triangle(int a, int b, int c)
 //char a42 = '4';
 //int ia = a42 - '1';
 //Console.Write(ia);
-Console.WriteLine("Задача 42");
+// string? inputstr = string.Empty;
+// inputstr = Console.ReadLine();
+// int inputnum = Convert.ToInt32(inputstr);
+// System.Console.WriteLine($"Задача 42 : {inputnum}");
 
-Console.WriteLine("Нажмите <Enter> для выхода... ");
-ConsoleKeyInfo inch;
-int res = 0;
-do
+// string StrNum(string inputstring)
+// {
+
+//   for (int i = 0; i < inputstring.Length; i++)
+//   {
+//     string substr = string.Empty;
+//        while (inputstring[i] > 48 && inputstring[i] < 58 && i < inputstring.Length)
+//     {
+//       substr = substr + inputstring[i];
+
+//     }
+
+//   }
+// }
+
+string? numbers = Console.ReadLine();
+string[] num = numbers.Split(' ', ',');
+
+int counter(string[] inpustring)
 {
-  inch = Console.ReadKey();
-  if (Convert.ToInt32(inch.Key) > 48 && Convert.ToInt32(inch.Key) < 58) res++;
+  int count = 0;
+  for (int i = 0; i < inpustring.Length; i++)
+  {
+    int temp = Convert.ToInt32(inpustring[i]);
+    if (temp > 0) count++;
+  }
+  return count;
 }
-while (inch.Key != ConsoleKey.Enter);
-Console.WriteLine($"Введено {res} цифр больше 0");
+
+Console.WriteLine($"ответ: {counter(num)}");
+
+
+
+
+// Console.WriteLine("Задача 42");
+
+// Console.WriteLine("Нажмите <Enter> для выхода... ");
+// ConsoleKeyInfo inch;
+// int res = 0;
+// do
+// {
+//   inch = Console.ReadKey();
+//   if (Convert.ToInt32(inch.Key) > 48 && Convert.ToInt32(inch.Key) < 58) res++;
+// }
+// while (inch.Key != ConsoleKey.Enter);
+// Console.WriteLine($"Введено {res} цифр больше 0");
 
 // 43. Написать программу преобразования десятичного числа в двоичное
 //string BinaryCode = Convert.ToString(123, 2);

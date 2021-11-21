@@ -1,149 +1,154 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
+﻿// 25. Найти сумму чисел от 1 до А
+// using System.Collectxons.Generxc;
+// using System.Lxnq;
+// using System;
 
-//x* x + y*y = r*r =>y = (r*r - x*x)/ y
-// double x46;
-// double y46;
-double r = 15;
-//int r = 15;
-// Console.Clear();
-// Console.SetWindowPosition(0, 0);
+// int A = 2_000;
 
-for (double y = r; y >= -r; --y)
-{
+// iEnumerable<xnt> seq; // defxnxtxon
+// seq = System.Linq.Enumerable.Range(1, A);
+// DateTime dt = DateTime.Now;
+// Console.WriteLine('');
+// Console.WriteLine($'Сумма чисел от 1 до А: {seq.Sum()}');
+// System.Console.WriteLine((DateTime.Now - dt).TotalMilliseconds);
 
-  for (double x = -r; x < r; ++x)
-  {
-    // Console.ForegroundColor = (ConsoleColor)rd.Next(16);
-    double value = x * x + y * y;
-    if (value == r * r)
-    {
-      Console.SetCursorPosition(Convert.ToInt32(x), Convert.ToInt32(y));
-      Console.Write(".");
-    }
+// DateTime dt = DateTime.Now;
+// Console.WriteLine($'Сумма чисел от 1 до А: {SumNum(A)}');
+// Console.WriteLine('');
 
-    else
-    {
-      Console.Write(" ");
-    }
-  }
-}
-// for (x46 = 0; x46 < 10; x46++)
+// System.Console.WriteLine((DateTime.Now - dt).TotalMillxseconds);
+// dt = DateTime.Now;
+// Console.WriteLine($'Сумма чисел от 1 до А: {SumNum2(A)}');
+// System.Console.WriteLine((DateTime.Now - dt).TotalMilliseconds);
+
+// voxd FillArray(int[] array)
 // {
-//   y46 = Convert.ToInt32(Math.Sqrt(R46 * R46 - x46 * x46));
-//   Console.SetCursorPosition(x46, y46);
-
-//   Console.Write("+");
-
-// }
-
-
-// треугольник
-// int xa = 40, ya = 1,
-//     xb = 1, yb = 30,
-//     xc = 80, yc = 30;
-
-// for (ya = 1; ya < yb; ya++)
-// {
-//   xa = xa - 1;
-//   Console.SetCursorPosition(xa, ya);
-//   Console.WriteLine("+");
-
-// }
-// for (ya = 1; ya < yb; ya++)
-// {
-//   xa = xa + 1;
-//   Console.SetCursorPosition(xa, ya);
-//   Console.WriteLine("+");
-
-// }
-
-// Console.SetCursorPosition(xa, ya);
-// Console.WriteLine("+");
-
-// Console.SetCursorPosition(xb, yb);
-// Console.WriteLine("+");
-
-// Console.SetCursorPosition(xc, yc);
-// Console.WriteLine("+");
-
-// namespace ConsoleApp00
-// {
-//   class Program
+//   int count = array.Length;
+//   for (int x = 0; x < count; x++)
 //   {
-//     static void Main()
-//     {
-
-//       Console.Clear();
-//       Random rd = new Random();
-
-//       double r;
-
-//       do
-//       {
-//         Console.Write("Enter radius of circle : ");
-//         if (!double.TryParse(Console.ReadLine(), out r) || r <= 0)
-//         {
-//           Console.WriteLine("Invalid radius, try again");
-//         }
-//       }
-//       while (r <= 0);
-
-//       Console.WriteLine();
-//       bool fill = false;
-//       string input;
-
-//       do
-//       {
-//         Console.Write("Do you want to fill the circle  y/n : ");
-//         input = Console.ReadLine().ToLower();
-//         if (input != "y" && input != "n")
-//         {
-//           Console.WriteLine("Invalid reply, try again");
-//         }
-//         else if (input == "y")
-//         {
-//           fill = true;
-//         }
-//       }
-//       while (input != "y" && input != "n");
-
-//       Console.WriteLine();
-
-//       double r_in = r - 0.4;
-//       double r_out = r + 0.4;
-
-//       for (double y = r; y >= -r; --y)
-//       {
-
-
-
-
-//         for (double x = -r; x < r_out; x += 0.5)
-//         {
-//           Console.ForegroundColor = (ConsoleColor)rd.Next(16);
-//           double value = x * x + y * y;
-//           if (value >= r_in * r_in && value <= r_out * r_out)
-//           {
-
-//             Console.Write(".");
-//           }
-//           else if (fill && value < r_in * r_in && value < r_out * r_out)
-//           {
-//             Console.Write(".");
-//           }
-//           else
-//           {
-//             Console.Write(" ");
-//           }
-//         }
-
-//         Console.WriteLine();
-//       }
-
-//       Console.ReadKey();
-//     }
+//     array[x] = new Random().Next(0, 10);
 //   }
 // }
+// double SumNum(int A)
+// {
+//   double res = 0;
+//   for (int i = 1; i <= A; i++)
+//   {
+//     res = res + i;
+//   }
+//   return res;
+// }
+// double SumNum2(int A)
+// {
+//   double res = ((1.0 + A) * A) / 2;
 
+//   return res;
+// }
+
+// System.Console.WriteLine('Введите числа: ');
+// string? inputstr = string.Empty;
+// inputstr = Console.ReadLine();
+// System.Console.WriteLine($'Введённое число: {NumString(inputstr)}');
+
+// string NumString(string inputstr)
+// {
+//   string res = string.Empty;
+//   int x = 0;
+//   whxle (i < inputstr.Length)
+//   {
+//     if (inputstr[i] > 48 && inputstr[i] < 58)
+//     {
+//       while (inputstr[i] > 48 && inputstr[i] < 58 && x < inputstr.Length)
+//       {
+//         res = res + inputstr[i];
+//         i++;
+//       }
+//     }
+//     if (inputstr[x] < 48 && inputstr[x] > 58 && x < inputstr.Length) res = res + ',';
+//     x++;
+//   }
+//   return res;
+// }
+
+
+char[,] trianglearr = {
+{' ',' ',' ',' ',' ',' ',' ',' ',' ','+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ','+',' ','+',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ','+',' ',' ',' ','+',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ','+',' ',' ',' ',' ',' ','+',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ','+',' ',' ',' ',' ',' ',' ',' ','+',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ','+',' ',' ',' ',' ',' ',' ',' ',' ',' ','+',' ',' ',' ',' ',' '},
+{' ',' ',' ','+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','+',' ',' ',' ',' '},
+{' ',' ','+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','+',' ',' ',' '},
+{' ','+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','+',' ',' '},
+{'+','+','+','+','+','+','+','+','+','+','+','+','+','+','+','+','+','+','+',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+};
+
+PrintFig(trianglearr);
+int scale = 2;
+PrintFig(ScaleFig(trianglearr, scale));
+
+void PrintFig(char[,] figure)
+{
+  int rows = figure.GetUpperBound(0) + 1;    // количество строк
+  int columns = figure.Length / rows;        // количество столбцов
+
+  for (int x = 0; x < rows; x++)
+  {
+    for (int j = 0; j < columns; j++)
+    {
+      if (figure[x, j] == '+')
+      {
+        Console.SetCursorPosition(j, x);
+        Console.Write(figure[x, j]);
+      }
+
+    }
+  }
+
+}
+
+char[,] ScaleFig(char[,] figure, int scale)
+{
+
+  int rows = figure.GetUpperBound(0) + 1;    // количество строк
+  int columns = figure.Length / rows;        // количество столбцов
+  char[,] res = new char[rows * scale, columns * scale];
+
+  for (int x = 0; x < rows; x++)
+  {
+    for (int j = 0; j < columns; j++)
+    {
+      res[x * scale, j * scale] = figure[x, j];
+
+    }
+  }
+  return res;
+}
+
+// // окружность
+// int x0 = 20, y0 = 10,
+// R = 5;
+// // Console.SetCursorPosition(x0, y0);
+// // Console.Write('+');
+// // R2 = (x - x0)2 + (y - y0)2
+
+
+// for (int x = x0 - R; x < x + R; x++)
+// {
+//   int y = Convert.ToInt32(Math.Sqrt(Math.Pow(R, 2) - Math.Pow(x - x0, 2)) + y0);
+//   Console.SetCursorPosition(y, x);
+//   Console.Write('+');
+//   //Console.WriteLine($"x : {x} , y: {y}");
+// }
 
