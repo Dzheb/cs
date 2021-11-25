@@ -1102,5 +1102,8 @@ int num3 = 5;
 int num4 = 4;
 int num5 = 4;
 
+
+
+
 if (((num1 == 5 || num2 == 5) && (num1 != num2)) && ((num3 == 5 || num4 == 5) && (num3 != num4)) && (num5 == 5)) Console.WriteLine("!!!");
 
