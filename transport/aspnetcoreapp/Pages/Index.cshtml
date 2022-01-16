@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная";
+      
+   }
+
+<div class="text-center">
+    <!--Grid column-->
+                    <div class="col-lg-5 col-md-12">
+                        <!-- Form contact -->
+                        <p1>Форма создания нового заказа (все поля обязательны для заполнения): </p1>
+                        <form  method="POST" action="/Home/Register" class="p-5 grey-text">
+                            <div class="md-form form-sm"> 
+                                <label for="form3">Город отправителя</label>
+                                <input type="text" id="contact-name" class="form-control form-control-sm  required" name="city">
+                            </div>
+                            <div class="md-form form-sm"> 
+                                <label for="form2">Адрес отправителя</label>
+                                <input type="text" id="contact-email" class="form-control form-control-sm required" name="address">
+                            </div>
+                            <div class="md-form form-sm"> 
+                                <label for="form3">Город получателя</label>
+                                <input type="text" id="contact-name" class="form-control form-control-sm  required" name="city">
+                            </div>
+                            <div class="md-form form-sm"> 
+                                <label for="form2">Адрес получателя</label>
+                                <input type="text" id="contact-email" class="form-control form-control-sm required" name="address">
+                            </div>
+                            <div class="md-form form-sm"> 
+                                <label for="form34">Вес груза(Кг)</label>
+                                <input type="text"  id="contact-Subject" class="form-control form-control-sm required" name="tema_message"></textarea">
+                            </div>
+                            <div class="md-form form-sm"> 
+                                <label for="form8">Дата забора груза</label>
+                                <date type="date" id="contact-message" class="md-textarea form-control form-control-sm required" name="message" rows="4"></date>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="btn btn-primary">Отправить</button>
+                            </div>
+                        </form>
+                        <!-- Form contact -->
+                    </div>
+                    <!--Grid column-->
+
+   
+</div>
